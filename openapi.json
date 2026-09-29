@@ -1,0 +1,891 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "TikTok Developer Content Posting API",
+    "version": "1.0.0",
+    "description": "Derived by Soenneker from official TikTok documentation. Not an official TikTok OpenAPI release. Covers posting, draft upload, creator info and status; OAuth, Display, Research, webhooks and binary upload URLs are outside this document."
+  },
+  "servers": [
+    {
+      "url": "https://open.tiktokapis.com"
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/v2/post/publish/video/init/": {
+      "post": {
+        "operationId": "PostV2PostPublishVideoInit",
+        "summary": "PostV2PostPublishVideoInit",
+        "externalDocs": {
+          "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-direct-post"
+        },
+        "x-tiktok-scopes": "video.publish",
+        "responses": {
+          "200": {
+            "description": "Inspect error.code; an HTTP 200 response can still contain an API error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishVideoInitResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid_param: Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishVideoInitResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "spam_risk_too_many_posts: The daily post cap from the API is reached for the current user.\nspam_risk_user_banned_from_posting: The user is banned from making new posts.\nreached_active_user_cap: The daily quota for active publishing users from your client is reached.\nunaudited_client_can_only_post_to_private_accounts: Unaudited clients can only post to a private account. The publish attempt will be blocked when calling /publish/video/init/.\nurl_ownership_unverified: To use PULL_FROM_URL as the video transfer method, the developer must verify the ownership of the URL prefix or domain. Refer to this doc for more details.\nprivacy_level_option_mismatch: privacy_level is not specified or not among the options from the privacy_level_options returned in /publish/creator_info/query/ API. All clients are required to correctly display the creator account\u0027s privacy level options and honor the users\u0027 choice. Occurances of this error for product-use applications suggest violations to TikTok\u0027s product-use guidance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishVideoInitResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "access_token_invalid: The access_token is invalid or has expired.\nscope_not_authorized: The access_token does not bear user\u0027s grant on video.publish scope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishVideoInitResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "rate_limit_exceeded: Your request is blocked due to exceeding the API rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishVideoInitResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": ": TikTok server or network error. Try again later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishVideoInitResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostV2PostPublishVideoInitRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/post/publish/status/fetch/": {
+      "post": {
+        "operationId": "PostV2PostPublishStatusFetch",
+        "summary": "PostV2PostPublishStatusFetch",
+        "externalDocs": {
+          "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-get-video-status"
+        },
+        "x-tiktok-scopes": "video.upload/video.publish",
+        "responses": {
+          "200": {
+            "description": "Inspect error.code. ok: The request was successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishStatusFetchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid_publish_id: The publish_id does not exist\ntoken_not_authorized_for_specified_publish_id: The access_token does not have authorization to cancel the publish",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishStatusFetchResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "access_token_invalid: The access_token is invalid or has expired\nscope_not_authorized: The access_token does not bear user\u0027s grant on video.upload or video.publish",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishStatusFetchResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "rate_limit_exceeded: Your request is blocked due to exceeding the API rate limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishStatusFetchResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "internal_error: TikTok server or network error. Try again later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishStatusFetchResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostV2PostPublishStatusFetchRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/post/publish/content/init/": {
+      "post": {
+        "operationId": "PostV2PostPublishContentInit",
+        "summary": "PostV2PostPublishContentInit",
+        "externalDocs": {
+          "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-photo-post"
+        },
+        "x-tiktok-scopes": "video.publish or video.upload",
+        "responses": {
+          "200": {
+            "description": "Inspect error.code; an HTTP 200 response can still contain an API error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishContentInitResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid_param: Check error message for details\napp_version_check_failed: To use MEDIA_UPLOAD post_mode, users\u0027 TikTok APP version must not be less than 31.8",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishContentInitResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "spam_risk_too_many_posts: The daily post cap from API is reached for the current user\nspam_risk_user_banned_from_posting: The user is banned from making new posts\nspam_risk_too_many_pending_share: The daily upload cap from the API is reached for the current user. To reduce spamming, TikTok limits the number of videos that can be uploaded via API that are not pending approval and posting by the creator. There may be at most 5 pending shares within any 24-hour period.\nreached_active_user_cap: The daily quota for active publishing users from your client is reached\nunaudited_client_can_only_post_to_private_accounts: Unaudited clients can only post to private account. The publish attempt will be blocked when calling /publish/content/init/.\nurl_ownership_unverified: To use PULL_FROM_URL as the content transfer method, developer must verify the ownership of the URL prefix or domain. Learn more about content transfer .\nprivacy_level_option_mismatch: privacy_level is either unspecified or not among the options from the privacy_level_options returned in /publish/creator_info/query/ API. All clients are required to correctly display the creator account\u0027s privacy level options and honor the users\u0027 choice. Occurances of this error for product-use applications suggest violations to TikTok\u0027s product-use guidance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishContentInitResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "access_token_invalid: The access_token is invalid or has expired\nscope_not_authorized: The access_token does not bear user\u0027s grant on video.publish or video.upload scope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishContentInitResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "rate_limit_exceeded: Your request is blocked due to exceeding the API rate limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishContentInitResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "internal_error: TikTok server or network error. Try again later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishContentInitResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostV2PostPublishContentInitRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/post/publish/creator_info/query/": {
+      "post": {
+        "operationId": "PostV2PostPublishCreatorInfoQuery",
+        "summary": "PostV2PostPublishCreatorInfoQuery",
+        "externalDocs": {
+          "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-query-creator-info"
+        },
+        "x-tiktok-scopes": "video.publish",
+        "responses": {
+          "200": {
+            "description": "Inspect error.code. ok: \nspam_risk_too_many_posts: The daily post cap from the API is reached for the current user.\nspam_risk_user_banned_from_posting: The user is banned from making new posts.\nreached_active_user_cap: The daily quota for active publishing users from your client is reached.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishCreatorInfoQueryResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "access_token_invalid: The access_token is invalid or has expired.\nscope_not_authorized: The access_token does not bear user\u0027s grant on video.publish scope.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishCreatorInfoQueryResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "rate_limit_exceeded: Your request is blocked due to exceeding the API rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishCreatorInfoQueryResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": ": TikTok server or network error. Try again later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishCreatorInfoQueryResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/post/publish/inbox/video/init/": {
+      "post": {
+        "operationId": "PostV2PostPublishInboxVideoInit",
+        "summary": "PostV2PostPublishInboxVideoInit",
+        "externalDocs": {
+          "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-upload-video"
+        },
+        "x-tiktok-scopes": "video.upload",
+        "responses": {
+          "200": {
+            "description": "Inspect error.code; an HTTP 200 response can still contain an API error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishInboxVideoInitResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "invalid_param: Check error message for details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishInboxVideoInitResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "spam_risk_too_many_pending_share: The daily upload cap from the API is reached for the current user. To reduce spamming, TikTok limits the number of videos that can be uploaded via API that are not pending approval and posting by the creator. There may be at most 5 pending shares within any 24-hour period.\nspam_risk_user_banned_from_posting: The user is banned from making new posts.\nurl_ownership_unverified: To use PULL_FROM_URL as the video transfer method, the developer must verify the ownership of the URL prefix or domain. Refer to this doc for more details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishInboxVideoInitResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "access_token_invalid: The access_token for the TikTok user is invalid or has expired.\nscope_not_authorized: The access_token does not bear user\u0027s grant on video.upload scope.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishInboxVideoInitResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "rate_limit_exceeded: Your request is blocked due to exceeding the API rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishInboxVideoInitResponse"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": ": TikTok server or network error. Try again later.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostV2PostPublishInboxVideoInitResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostV2PostPublishInboxVideoInitRequest"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PostV2PostPublishVideoInitResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "publish_id": {
+                "type": "string",
+                "description": "An identifier to track the posting action, which you can use to check the status. The maximum length of this field is 64."
+              },
+              "upload_url": {
+                "type": "string",
+                "description": "The URL provided by TikTok where the video file can be uploaded. The maximum length of this field is 256. This field is only for source=FILE_UPLOAD."
+              }
+            }
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "You can decide whether the request is successful based on the error code. Any code other than ok indicates the request did not succeed. Learn more about error codes ."
+              },
+              "message": {
+                "type": "string",
+                "description": "A human readable description of the error."
+              },
+              "log_id": {
+                "type": "string",
+                "description": "A unique identifier for the execution of this request."
+              }
+            }
+          }
+        }
+      },
+      "PostV2PostPublishVideoInitRequest": {
+        "type": "object",
+        "properties": {
+          "post_info": {
+            "type": "object",
+            "properties": {
+              "privacy_level": {
+                "type": "string",
+                "description": "Enum of: PUBLIC_TO_EVERYONE MUTUAL_FOLLOW_FRIENDS FOLLOWER_OF_CREATOR SELF_ONLY The provided value must match one of the privacy_level_options returned in the /creator_info/query/ API.",
+                "x-tiktok-required": "true"
+              },
+              "title": {
+                "type": "string",
+                "description": "The video caption. Hashtags (#) and mentions (@) will be matched, or deliminated by spaces or new lines. The maximum length is 2200 in UTF-16 runes. If not specified, the ticket post will not have any captions.",
+                "x-tiktok-required": "false"
+              },
+              "disable_duet": {
+                "type": "boolean",
+                "description": "If set to true, other TikTok users will not be allowed to make Duets using this post. The TikTok server disables Duets for private accounts and those who set the Duet permission to \u0022No one\u0022 in their privacy setting.",
+                "x-tiktok-required": "false"
+              },
+              "disable_stitch": {
+                "type": "boolean",
+                "description": "If set to true, other TikTok users will not be allowed to make Stitches using this post. The TikTok server disables Stitches for private accounts and those who set the Stitch permission to \u0022No one\u0022 in their privacy setting.",
+                "x-tiktok-required": "false"
+              },
+              "disable_comment": {
+                "type": "boolean",
+                "description": "If set to true, other TikTok users will not be allowed to make comments on this post. The TikTok server disables comments for users who set the Comments permission to \u0022No one\u0022 in their privacy setting.",
+                "x-tiktok-required": "false"
+              },
+              "video_cover_timestamp_ms": {
+                "type": "integer",
+                "format": "int32",
+                "description": "Specifies which frame (measured in milli-seconds) will be used as the video cover. If not set, or the specified value is invalid, the cover is set to the first frame of the uploaded video.",
+                "x-tiktok-required": "false"
+              },
+              "brand_content_toggle": {
+                "type": "boolean",
+                "description": "Set to true if the video is a paid partnership to promote a third-party business.",
+                "x-tiktok-required": "true"
+              },
+              "brand_organic_toggle": {
+                "type": "boolean",
+                "description": "Set to true if this video is promoting the creator\u0027s own business.",
+                "x-tiktok-required": "true"
+              },
+              "is_aigc": {
+                "type": "boolean",
+                "description": "Set to true if the video is AI generated content. If set, the video will be labelled with Creator labeled as AI-generated tag in video\u0027s description.",
+                "x-tiktok-required": "false"
+              }
+            },
+            "required": [
+              "privacy_level",
+              "brand_content_toggle",
+              "brand_organic_toggle"
+            ]
+          },
+          "source_info": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "description": "Choose from: PULL_FROM_URL FILE_UPLOAD Learn about the limitations for these file transmission methods .",
+                "x-tiktok-required": "true"
+              },
+              "video_url": {
+                "type": "string",
+                "description": "A public-accessible URL from which the TikTok server will pull to retrieve the video resource.",
+                "x-tiktok-required": "true for PULL_FROM_URL"
+              },
+              "video_size": {
+                "type": "integer",
+                "format": "int64",
+                "description": "The size of the to-be-uploaded video file in bytes.",
+                "x-tiktok-required": "true forFILE_UPLOAD"
+              },
+              "chunk_size": {
+                "type": "integer",
+                "format": "int64",
+                "description": "The size of the chunk in bytes.",
+                "x-tiktok-required": "true forFILE_UPLOAD"
+              },
+              "total_chunk_count": {
+                "type": "integer",
+                "format": "int64",
+                "description": "The total number of chunks.",
+                "x-tiktok-required": "true forFILE_UPLOAD"
+              }
+            },
+            "required": [
+              "source"
+            ]
+          }
+        },
+        "required": [
+          "post_info",
+          "source_info"
+        ]
+      },
+      "PostV2PostPublishStatusFetchResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "description": "The following are the available statuses: PROCESSING_UPLOAD : Only available for FILE_UPLOAD . Indicates that the upload is in process. PROCESSING_DOWNLOAD : Only available for PULL_FROM_URL . Indicates that the download from the URL is in process. SEND_TO_USER_INBOX : Only available when you choose to upload content . Indicates that a notification has been sent to creator\u0027s inbox to complete the draft post using TikTok\u0027s editing flow. PUBLISH_COMPLETE : For the Direct Post , it indicates that the content has been posted. For the Upload Content, it indicates that the user has clicked on the inbox notification and has successfully posted the media using TikTok editing flow. FAILED : Indicates that an error has occurred and the entire process has failed."
+              },
+              "fail_reason": {
+                "type": "string",
+                "description": "Refer to the fail_reason table to see whether the issue is with the developer, the TikTok creator, or TikTok APIs"
+              },
+              "publicaly_available_post_id": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "description": "post_id is returned only if the post is published for public viewership and has been approved by the TikTok moderation process. Creators may use the uploaded content draft to create multiple pieces of content."
+              },
+              "uploaded_bytes": {
+                "type": "integer",
+                "format": "int64",
+                "description": "The number of bytes uploaded (1-indexed) for FILE_UPLOAD"
+              },
+              "downloaded_bytes": {
+                "type": "integer",
+                "format": "int64",
+                "description": "The number of bytes downloaded (1-indexed) for PULL_FROM_URL"
+              }
+            }
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "log_id": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "x-schema-source": "documentation-example"
+      },
+      "PostV2PostPublishStatusFetchRequest": {
+        "type": "object",
+        "properties": {
+          "publish_id": {
+            "type": "string",
+            "x-schema-source": "documented-field-type"
+          }
+        },
+        "x-schema-source": "documentation-example"
+      },
+      "PostV2PostPublishContentInitResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "publish_id": {
+                "type": "string",
+                "description": "An identifier to track the posting action, which you can use to check status. The maximum length of this field is 64."
+              }
+            }
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "You can decide whether the request is successful based on the error code. Any code other than ok indicates the request did not succeed. Learn more about error codes ."
+              },
+              "message": {
+                "type": "string",
+                "description": "A human-readable description of the error"
+              },
+              "log_id": {
+                "type": "string",
+                "description": "A unique identifier for the execution of this request"
+              }
+            }
+          }
+        }
+      },
+      "PostV2PostPublishContentInitRequest": {
+        "type": "object",
+        "properties": {
+          "media_type": {
+            "type": "string",
+            "description": "Currently only PHOTO is allowed",
+            "x-tiktok-required": "true"
+          },
+          "post_mode": {
+            "type": "string",
+            "description": "Enum of: DIRECT POST: Directly post the content to TikTok user\u0027s account. MEDIA_UPLOAD: Upload content to TikTok for users to complete the post using TikTok\u0027s editing flow. Users will receive an inbox notification.",
+            "x-tiktok-required": "true"
+          },
+          "post_info": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "The post title. The maximum length for photo posts is 90 in UTF-16 runes.",
+                "x-tiktok-required": "false"
+              },
+              "description": {
+                "type": "string",
+                "description": "The post description. The maximum length for photo posts is 4000 in UTF-16 runes.",
+                "x-tiktok-required": "false"
+              },
+              "privacy_level": {
+                "type": "string",
+                "description": "Enum of: PUBLIC_TO_EVERYONE MUTUAL_FOLLOW_FRIENDS FOLLOWER_OF_CREATOR SELF_ONLY The provided value must match one of the privacy_level_options returned in the /creator_info/query/ API.",
+                "x-tiktok-required": "Required for DIRECT POST"
+              },
+              "disable_comment": {
+                "type": "boolean",
+                "description": "Only works for post_mode = DIRECT POST. If set to true, other TikTok users will not be allowed to make comments on this post.",
+                "x-tiktok-required": "false"
+              },
+              "auto_add_music": {
+                "type": "boolean",
+                "description": "Only works for post_mode = DIRECT POST. If set to true, recommended music will be automatically added to photos, and users can later choose to change the post\u0027s music in TikTok if they prefer other music.",
+                "x-tiktok-required": "false"
+              },
+              "brand_content_toggle": {
+                "type": "boolean",
+                "description": "Only works for post_mode = DIRECT POST. Set to true if the content is a paid partnership to promote a third-party business.",
+                "x-tiktok-required": "true"
+              },
+              "brand_organic_toggle": {
+                "type": "boolean",
+                "description": "Only works for post_mode = DIRECT POST. Set to true if this content is promoting the creator\u0027s own business.",
+                "x-tiktok-required": "true"
+              }
+            },
+            "description": "The post information",
+            "x-tiktok-required": "true"
+          },
+          "source_info": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "description": "Only PULL_FROM_URL is allowed",
+                "x-tiktok-required": "true"
+              },
+              "photo_images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array containing up to 35 photo content URLs. The URLs must be publicly accessible and verified by your app. Learn more about pulling from URLs .",
+                "x-tiktok-required": "true"
+              },
+              "photo_cover_index": {
+                "type": "integer",
+                "format": "int32",
+                "description": "Indicates the index (starting from 0) of the photo to be used as the cover",
+                "x-tiktok-required": "true"
+              }
+            },
+            "required": [
+              "source",
+              "photo_images",
+              "photo_cover_index"
+            ],
+            "description": "The media source information",
+            "x-tiktok-required": "true"
+          },
+          "is_aigc": {
+            "type": "boolean",
+            "description": "Set to \u0060true\u0060 if the photo is AI generated content. If set, the photo will be labeled with an AI-generated tag in the description.",
+            "x-tiktok-required": "false"
+          }
+        },
+        "required": [
+          "media_type",
+          "post_mode",
+          "post_info",
+          "source_info"
+        ]
+      },
+      "PostV2PostPublishCreatorInfoQueryResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "creator_avatar_url": {
+                "type": "string",
+                "description": "The URL of the TikTok creator\u0027s avatar with a TTL of 2 hours."
+              },
+              "creator_username": {
+                "type": "string",
+                "description": "The unique ID of the TikTok creator."
+              },
+              "creator_nickname": {
+                "type": "string",
+                "description": "The nickname of the TikTok creator."
+              },
+              "privacy_level_options": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "If the TikTok creator account is public, the available options are: PUBLIC_TO_EVERYONE MUTUAL_FOLLOW_FRIENDS SELF_ONLY If the TikTok creator account is private, the available options are: FOLLOWER_OF_CREATOR MUTUAL_FOLLOW_FRIENDS SELF_ONLY"
+              },
+              "comment_disabled": {
+                "type": "boolean",
+                "description": "Returns true if the creator sets the comment interaction to \u0022No one\u0022 in their privacy setting."
+              },
+              "duet_disabled": {
+                "type": "boolean",
+                "description": "Returns true if the creator account is private or they set the Duet interaction to \u0022No one\u0022 in their privacy setting. IGNORE if your client only sends photo media through this API."
+              },
+              "stitch_disabled": {
+                "type": "boolean",
+                "description": "Returns true if the creator account is private or they set the Stitch interaction to \u0022No one\u0022 in their privacy setting. IGNORE if your client only sends photo media through this API."
+              },
+              "max_video_post_duration_sec": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The longest video duration in seconds that the TikTok creator can post. Different users have different maximum video-duration privileges. Developers should use this field to stop video posts that are too long. IGNORE if your client only sends photo media through this API."
+              }
+            }
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "You can decide whether the request is successful based on the error code. Any code other than ok indicates the request did not succeed. Learn more about error codes ."
+              },
+              "message": {
+                "type": "string",
+                "description": "A human readable description of the error."
+              },
+              "logid": {
+                "type": "string",
+                "description": "A unique identifier for the execution of this request."
+              }
+            }
+          }
+        }
+      },
+      "PostV2PostPublishInboxVideoInitResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "publish_id": {
+                "type": "string",
+                "description": "An identifier to track the posting action, which you can use to check the status. The maximum length of this field is 64."
+              },
+              "upload_url": {
+                "type": "string",
+                "description": "The URL provided by TikTok where the video file can be uploaded. The maximum length of this field is 256. This field is only for source=FILE_UPLOAD ."
+              }
+            }
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "You can decide whether the request is successful based on the error code. Any code other than ok indicates the request did not succeed. Learn more about error codes ."
+              },
+              "message": {
+                "type": "string",
+                "description": "A human readable description of the error."
+              },
+              "log_id": {
+                "type": "string",
+                "description": "A unique identifier for the execution of this request."
+              }
+            }
+          }
+        }
+      },
+      "PostV2PostPublishInboxVideoInitRequest": {
+        "type": "object",
+        "properties": {
+          "source_info": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "description": "The mechanism by which you will provide the video. You can choose from FILE_UPLOAD and PULL_FROM_URL .",
+                "x-tiktok-required": "true"
+              },
+              "video_size": {
+                "type": "integer",
+                "format": "int64",
+                "description": "The size of the video to be uploaded in bytes.",
+                "x-tiktok-required": "true for FILE_UPLOAD"
+              },
+              "chunk_size": {
+                "type": "integer",
+                "format": "int64",
+                "description": "The size of the chunk in bytes.",
+                "x-tiktok-required": "true for FILE_UPLOAD"
+              },
+              "total_chunk_count": {
+                "type": "integer",
+                "format": "int64",
+                "description": "The total number of chunks.",
+                "x-tiktok-required": "true for FILE_UPLOAD"
+              },
+              "video_url": {
+                "type": "string",
+                "description": "The URL of the video to be uploaded. The domain or URL prefix of the video_url should already be verified. Learn more about verifying the URL prefix .",
+                "x-tiktok-required": "true for PULL_FROM_URL"
+              }
+            },
+            "required": [
+              "source"
+            ]
+          }
+        },
+        "required": [
+          "source_info"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "x-documentation-sources": [
+    {
+      "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-direct-post",
+      "sha256": "9ca6d2ecd2e269067fe84aa53c2e6b5ccbe1a8720603eb04be28395d3a04f1a8"
+    },
+    {
+      "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-get-video-status",
+      "sha256": "1f6f8998a51ab8fa4fe76adab3d9f6728e0faba6081d6535508598638798576a"
+    },
+    {
+      "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-photo-post",
+      "sha256": "1e1631b744a3f029dc58f4a3a3bf989bc93cb0f7df4c604ba6eabc44868aa825"
+    },
+    {
+      "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-query-creator-info",
+      "sha256": "c8d54d19c476374ce5bf88060b8461756e9dd8f717c11eb4cc237e6542aa4cdb"
+    },
+    {
+      "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-upload-video",
+      "sha256": "52e08918b90f7be1fb95e3f8c6b3664fcdb8bb4b260f4610a273037128f7992f"
+    }
+  ]
+}
