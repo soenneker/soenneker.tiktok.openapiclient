@@ -877,15 +877,15 @@
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-photo-post",
-      "sha256": "1e1631b744a3f029dc58f4a3a3bf989bc93cb0f7df4c604ba6eabc44868aa825"
+      "sha256": "e9f664aa2059d4daba6b6b61cc8dc009458f6e29be8874ee4a6740f52a79fedc"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-query-creator-info",
-      "sha256": "c8d54d19c476374ce5bf88060b8461756e9dd8f717c11eb4cc237e6542aa4cdb"
+      "sha256": "54a691c75c04a0e4ee025867c9cb23f1228a4eff4b0417a9d1a8aff3c975bb28"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-upload-video",
-      "sha256": "52e08918b90f7be1fb95e3f8c6b3664fcdb8bb4b260f4610a273037128f7992f"
+      "sha256": "0203f0f0d9c446828728eb6deca1a549b7b5fd075d0ef1eefd22742277355a92"
     }
   ]
 }
