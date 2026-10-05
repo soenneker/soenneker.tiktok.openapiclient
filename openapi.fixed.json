@@ -926,7 +926,7 @@
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-photo-post",
-      "sha256": "1e1631b744a3f029dc58f4a3a3bf989bc93cb0f7df4c604ba6eabc44868aa825"
+      "sha256": "e9f664aa2059d4daba6b6b61cc8dc009458f6e29be8874ee4a6740f52a79fedc"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-query-creator-info",
@@ -934,7 +934,7 @@
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-upload-video",
-      "sha256": "52e08918b90f7be1fb95e3f8c6b3664fcdb8bb4b260f4610a273037128f7992f"
+      "sha256": "20d6441edd906b5ac654a4020d1322c31234016d788f65832ed7e24ba8d62a2d"
     }
   ]
 }
