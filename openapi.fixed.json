@@ -918,7 +918,7 @@
   "x-documentation-sources": [
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-direct-post",
-      "sha256": "67ec512b4e0e71c3fe73f8a54eaa04ab8b0b6bf817732191423bc461bc84ce5a"
+      "sha256": "9ca6d2ecd2e269067fe84aa53c2e6b5ccbe1a8720603eb04be28395d3a04f1a8"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-get-video-status",
