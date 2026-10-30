@@ -11,49 +11,76 @@ namespace Soenneker.TikTok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2PostPublishCreatorInfoQueryResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comment_disabled") is { } nullNodeCommentDisabled && nullNodeCommentDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommentDisabled = null;
+            if (parseNode.GetChildNode("creator_avatar_url") is { } nullNodeCreatorAvatarUrl && nullNodeCreatorAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorAvatarUrl = null;
+            if (parseNode.GetChildNode("creator_nickname") is { } nullNodeCreatorNickname && nullNodeCreatorNickname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorNickname = null;
+            if (parseNode.GetChildNode("creator_username") is { } nullNodeCreatorUsername && nullNodeCreatorUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorUsername = null;
+            if (parseNode.GetChildNode("duet_disabled") is { } nullNodeDuetDisabled && nullNodeDuetDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuetDisabled = null;
+            if (parseNode.GetChildNode("max_video_post_duration_sec") is { } nullNodeMaxVideoPostDurationSec && nullNodeMaxVideoPostDurationSec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxVideoPostDurationSec = null;
+            if (parseNode.GetChildNode("privacy_level_options") is { } nullNodePrivacyLevelOptions && nullNodePrivacyLevelOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivacyLevelOptions = null;
+            if (parseNode.GetChildNode("stitch_disabled") is { } nullNodeStitchDisabled && nullNodeStitchDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StitchDisabled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Returns true if the creator sets the comment interaction to &quot;No one&quot; in their privacy setting.</summary>
-        public bool? CommentDisabled { get; set; }
+        public bool? CommentDisabled { get => _explicitNullValueCommentDisabled; set { _explicitNullValueCommentDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment_disabled"); else _explicitNullProperties?.Remove("comment_disabled"); } }
+        private bool? _explicitNullValueCommentDisabled = default!;
         /// <summary>The URL of the TikTok creator&apos;s avatar with a TTL of 2 hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorAvatarUrl { get; set; }
+        public string? CreatorAvatarUrl { get => _explicitNullValueCreatorAvatarUrl; set { _explicitNullValueCreatorAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_avatar_url"); else _explicitNullProperties?.Remove("creator_avatar_url"); } }
+        private string? _explicitNullValueCreatorAvatarUrl = default!;
 #nullable restore
 #else
-        public string CreatorAvatarUrl { get; set; }
+        public string CreatorAvatarUrl { get => _explicitNullValueCreatorAvatarUrl; set { _explicitNullValueCreatorAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_avatar_url"); else _explicitNullProperties?.Remove("creator_avatar_url"); } }
+        private string _explicitNullValueCreatorAvatarUrl = default!;
 #endif
         /// <summary>The nickname of the TikTok creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorNickname { get; set; }
+        public string? CreatorNickname { get => _explicitNullValueCreatorNickname; set { _explicitNullValueCreatorNickname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_nickname"); else _explicitNullProperties?.Remove("creator_nickname"); } }
+        private string? _explicitNullValueCreatorNickname = default!;
 #nullable restore
 #else
-        public string CreatorNickname { get; set; }
+        public string CreatorNickname { get => _explicitNullValueCreatorNickname; set { _explicitNullValueCreatorNickname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_nickname"); else _explicitNullProperties?.Remove("creator_nickname"); } }
+        private string _explicitNullValueCreatorNickname = default!;
 #endif
         /// <summary>The unique ID of the TikTok creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorUsername { get; set; }
+        public string? CreatorUsername { get => _explicitNullValueCreatorUsername; set { _explicitNullValueCreatorUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_username"); else _explicitNullProperties?.Remove("creator_username"); } }
+        private string? _explicitNullValueCreatorUsername = default!;
 #nullable restore
 #else
-        public string CreatorUsername { get; set; }
+        public string CreatorUsername { get => _explicitNullValueCreatorUsername; set { _explicitNullValueCreatorUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_username"); else _explicitNullProperties?.Remove("creator_username"); } }
+        private string _explicitNullValueCreatorUsername = default!;
 #endif
         /// <summary>Returns true if the creator account is private or they set the Duet interaction to &quot;No one&quot; in their privacy setting. IGNORE if your client only sends photo media through this API.</summary>
-        public bool? DuetDisabled { get; set; }
+        public bool? DuetDisabled { get => _explicitNullValueDuetDisabled; set { _explicitNullValueDuetDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duet_disabled"); else _explicitNullProperties?.Remove("duet_disabled"); } }
+        private bool? _explicitNullValueDuetDisabled = default!;
         /// <summary>The longest video duration in seconds that the TikTok creator can post. Different users have different maximum video-duration privileges. Developers should use this field to stop video posts that are too long. IGNORE if your client only sends photo media through this API.</summary>
-        public int? MaxVideoPostDurationSec { get; set; }
+        public int? MaxVideoPostDurationSec { get => _explicitNullValueMaxVideoPostDurationSec; set { _explicitNullValueMaxVideoPostDurationSec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_video_post_duration_sec"); else _explicitNullProperties?.Remove("max_video_post_duration_sec"); } }
+        private int? _explicitNullValueMaxVideoPostDurationSec = default!;
         /// <summary>If the TikTok creator account is public, the available options are: PUBLIC_TO_EVERYONE MUTUAL_FOLLOW_FRIENDS SELF_ONLY If the TikTok creator account is private, the available options are: FOLLOWER_OF_CREATOR MUTUAL_FOLLOW_FRIENDS SELF_ONLY</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PrivacyLevelOptions { get; set; }
+        public List<string>? PrivacyLevelOptions { get => _explicitNullValuePrivacyLevelOptions; set { _explicitNullValuePrivacyLevelOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy_level_options"); else _explicitNullProperties?.Remove("privacy_level_options"); } }
+        private List<string>? _explicitNullValuePrivacyLevelOptions = default!;
 #nullable restore
 #else
-        public List<string> PrivacyLevelOptions { get; set; }
+        public List<string> PrivacyLevelOptions { get => _explicitNullValuePrivacyLevelOptions; set { _explicitNullValuePrivacyLevelOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy_level_options"); else _explicitNullProperties?.Remove("privacy_level_options"); } }
+        private List<string> _explicitNullValuePrivacyLevelOptions = default!;
 #endif
         /// <summary>Returns true if the creator account is private or they set the Stitch interaction to &quot;No one&quot; in their privacy setting. IGNORE if your client only sends photo media through this API.</summary>
-        public bool? StitchDisabled { get; set; }
+        public bool? StitchDisabled { get => _explicitNullValueStitchDisabled; set { _explicitNullValueStitchDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stitch_disabled"); else _explicitNullProperties?.Remove("stitch_disabled"); } }
+        private bool? _explicitNullValueStitchDisabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishCreatorInfoQueryResponseData"/> and sets the default values.
         /// </summary>
@@ -69,7 +96,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         public static global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishCreatorInfoQueryResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishCreatorInfoQueryResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishCreatorInfoQueryResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +131,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
             writer.WriteIntValue("max_video_post_duration_sec", MaxVideoPostDurationSec);
             writer.WriteCollectionOfPrimitiveValues<string>("privacy_level_options", PrivacyLevelOptions);
             writer.WriteBoolValue("stitch_disabled", StitchDisabled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

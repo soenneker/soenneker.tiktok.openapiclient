@@ -63,6 +63,7 @@ namespace Soenneker.TikTok.OpenApiClient.V2.Post.Publish.Content.Init
                 { "403", global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitResponse.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitResponse>(requestInfo, global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,39 +11,66 @@ namespace Soenneker.TikTok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2PostPublishVideoInitRequestPostInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("brand_content_toggle") is { } nullNodeBrandContentToggle && nullNodeBrandContentToggle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandContentToggle = null;
+            if (parseNode.GetChildNode("brand_organic_toggle") is { } nullNodeBrandOrganicToggle && nullNodeBrandOrganicToggle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandOrganicToggle = null;
+            if (parseNode.GetChildNode("disable_comment") is { } nullNodeDisableComment && nullNodeDisableComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableComment = null;
+            if (parseNode.GetChildNode("disable_duet") is { } nullNodeDisableDuet && nullNodeDisableDuet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableDuet = null;
+            if (parseNode.GetChildNode("disable_stitch") is { } nullNodeDisableStitch && nullNodeDisableStitch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableStitch = null;
+            if (parseNode.GetChildNode("is_aigc") is { } nullNodeIsAigc && nullNodeIsAigc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAigc = null;
+            if (parseNode.GetChildNode("privacy_level") is { } nullNodePrivacyLevel && nullNodePrivacyLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivacyLevel = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("video_cover_timestamp_ms") is { } nullNodeVideoCoverTimestampMs && nullNodeVideoCoverTimestampMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoCoverTimestampMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to true if the video is a paid partnership to promote a third-party business.</summary>
-        public bool? BrandContentToggle { get; set; }
+        public bool? BrandContentToggle { get => _explicitNullValueBrandContentToggle; set { _explicitNullValueBrandContentToggle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_content_toggle"); else _explicitNullProperties?.Remove("brand_content_toggle"); } }
+        private bool? _explicitNullValueBrandContentToggle = default!;
         /// <summary>Set to true if this video is promoting the creator&apos;s own business.</summary>
-        public bool? BrandOrganicToggle { get; set; }
+        public bool? BrandOrganicToggle { get => _explicitNullValueBrandOrganicToggle; set { _explicitNullValueBrandOrganicToggle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_organic_toggle"); else _explicitNullProperties?.Remove("brand_organic_toggle"); } }
+        private bool? _explicitNullValueBrandOrganicToggle = default!;
         /// <summary>If set to true, other TikTok users will not be allowed to make comments on this post. The TikTok server disables comments for users who set the Comments permission to &quot;No one&quot; in their privacy setting.</summary>
-        public bool? DisableComment { get; set; }
+        public bool? DisableComment { get => _explicitNullValueDisableComment; set { _explicitNullValueDisableComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_comment"); else _explicitNullProperties?.Remove("disable_comment"); } }
+        private bool? _explicitNullValueDisableComment = default!;
         /// <summary>If set to true, other TikTok users will not be allowed to make Duets using this post. The TikTok server disables Duets for private accounts and those who set the Duet permission to &quot;No one&quot; in their privacy setting.</summary>
-        public bool? DisableDuet { get; set; }
+        public bool? DisableDuet { get => _explicitNullValueDisableDuet; set { _explicitNullValueDisableDuet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_duet"); else _explicitNullProperties?.Remove("disable_duet"); } }
+        private bool? _explicitNullValueDisableDuet = default!;
         /// <summary>If set to true, other TikTok users will not be allowed to make Stitches using this post. The TikTok server disables Stitches for private accounts and those who set the Stitch permission to &quot;No one&quot; in their privacy setting.</summary>
-        public bool? DisableStitch { get; set; }
+        public bool? DisableStitch { get => _explicitNullValueDisableStitch; set { _explicitNullValueDisableStitch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_stitch"); else _explicitNullProperties?.Remove("disable_stitch"); } }
+        private bool? _explicitNullValueDisableStitch = default!;
         /// <summary>Set to true if the video is AI generated content. If set, the video will be labelled with Creator labeled as AI-generated tag in video&apos;s description.</summary>
-        public bool? IsAigc { get; set; }
+        public bool? IsAigc { get => _explicitNullValueIsAigc; set { _explicitNullValueIsAigc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_aigc"); else _explicitNullProperties?.Remove("is_aigc"); } }
+        private bool? _explicitNullValueIsAigc = default!;
         /// <summary>Enum of: PUBLIC_TO_EVERYONE MUTUAL_FOLLOW_FRIENDS FOLLOWER_OF_CREATOR SELF_ONLY The provided value must match one of the privacy_level_options returned in the /creator_info/query/ API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivacyLevel { get; set; }
+        public string? PrivacyLevel { get => _explicitNullValuePrivacyLevel; set { _explicitNullValuePrivacyLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy_level"); else _explicitNullProperties?.Remove("privacy_level"); } }
+        private string? _explicitNullValuePrivacyLevel = default!;
 #nullable restore
 #else
-        public string PrivacyLevel { get; set; }
+        public string PrivacyLevel { get => _explicitNullValuePrivacyLevel; set { _explicitNullValuePrivacyLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy_level"); else _explicitNullProperties?.Remove("privacy_level"); } }
+        private string _explicitNullValuePrivacyLevel = default!;
 #endif
         /// <summary>The video caption. Hashtags (#) and mentions (@) will be matched, or deliminated by spaces or new lines. The maximum length is 2200 in UTF-16 runes. If not specified, the ticket post will not have any captions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Specifies which frame (measured in milli-seconds) will be used as the video cover. If not set, or the specified value is invalid, the cover is set to the first frame of the uploaded video.</summary>
-        public int? VideoCoverTimestampMs { get; set; }
+        public int? VideoCoverTimestampMs { get => _explicitNullValueVideoCoverTimestampMs; set { _explicitNullValueVideoCoverTimestampMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_cover_timestamp_ms"); else _explicitNullProperties?.Remove("video_cover_timestamp_ms"); } }
+        private int? _explicitNullValueVideoCoverTimestampMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitRequestPostInfo"/> and sets the default values.
         /// </summary>
@@ -59,7 +86,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         public static global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitRequestPostInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitRequestPostInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitRequestPostInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +123,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
             writer.WriteStringValue("privacy_level", PrivacyLevel);
             writer.WriteStringValue("title", Title);
             writer.WriteIntValue("video_cover_timestamp_ms", VideoCoverTimestampMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

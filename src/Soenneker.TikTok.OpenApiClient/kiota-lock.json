@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "900745649A626946F0E049ACEA96C94F0E5D429645BD090F45414BA3FA24C3E6E2BBE6E42F43694A650F689F5E632BD4CFC6955C2EA134D1513AFC2EC7A2AA38",
+  "descriptionHash": "19C9797A624C48BC3D2DD3FABA8DDDFC43771E6B1B0A0E88CCB59F44F1A70C08378FE444A856477D393D376439F0C1BB1C9CF2DE0F216F4F207997C4A2CE2083",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "TikTokOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.TikTok.OpenApiClient",

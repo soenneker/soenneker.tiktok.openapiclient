@@ -12,40 +12,64 @@ namespace Soenneker.TikTok.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostV2PostPublishContentInitRequestPostInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_add_music") is { } nullNodeAutoAddMusic && nullNodeAutoAddMusic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoAddMusic = null;
+            if (parseNode.GetChildNode("brand_content_toggle") is { } nullNodeBrandContentToggle && nullNodeBrandContentToggle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandContentToggle = null;
+            if (parseNode.GetChildNode("brand_organic_toggle") is { } nullNodeBrandOrganicToggle && nullNodeBrandOrganicToggle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandOrganicToggle = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("disable_comment") is { } nullNodeDisableComment && nullNodeDisableComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableComment = null;
+            if (parseNode.GetChildNode("privacy_level") is { } nullNodePrivacyLevel && nullNodePrivacyLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivacyLevel = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Only works for post_mode = DIRECT POST. If set to true, recommended music will be automatically added to photos, and users can later choose to change the post&apos;s music in TikTok if they prefer other music.</summary>
-        public bool? AutoAddMusic { get; set; }
+        public bool? AutoAddMusic { get => _explicitNullValueAutoAddMusic; set { _explicitNullValueAutoAddMusic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_add_music"); else _explicitNullProperties?.Remove("auto_add_music"); } }
+        private bool? _explicitNullValueAutoAddMusic = default!;
         /// <summary>Only works for post_mode = DIRECT POST. Set to true if the content is a paid partnership to promote a third-party business.</summary>
-        public bool? BrandContentToggle { get; set; }
+        public bool? BrandContentToggle { get => _explicitNullValueBrandContentToggle; set { _explicitNullValueBrandContentToggle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_content_toggle"); else _explicitNullProperties?.Remove("brand_content_toggle"); } }
+        private bool? _explicitNullValueBrandContentToggle = default!;
         /// <summary>Only works for post_mode = DIRECT POST. Set to true if this content is promoting the creator&apos;s own business.</summary>
-        public bool? BrandOrganicToggle { get; set; }
+        public bool? BrandOrganicToggle { get => _explicitNullValueBrandOrganicToggle; set { _explicitNullValueBrandOrganicToggle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand_organic_toggle"); else _explicitNullProperties?.Remove("brand_organic_toggle"); } }
+        private bool? _explicitNullValueBrandOrganicToggle = default!;
         /// <summary>The post description. The maximum length for photo posts is 4000 in UTF-16 runes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Only works for post_mode = DIRECT POST. If set to true, other TikTok users will not be allowed to make comments on this post.</summary>
-        public bool? DisableComment { get; set; }
+        public bool? DisableComment { get => _explicitNullValueDisableComment; set { _explicitNullValueDisableComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_comment"); else _explicitNullProperties?.Remove("disable_comment"); } }
+        private bool? _explicitNullValueDisableComment = default!;
         /// <summary>Enum of: PUBLIC_TO_EVERYONE MUTUAL_FOLLOW_FRIENDS FOLLOWER_OF_CREATOR SELF_ONLY The provided value must match one of the privacy_level_options returned in the /creator_info/query/ API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivacyLevel { get; set; }
+        public string? PrivacyLevel { get => _explicitNullValuePrivacyLevel; set { _explicitNullValuePrivacyLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy_level"); else _explicitNullProperties?.Remove("privacy_level"); } }
+        private string? _explicitNullValuePrivacyLevel = default!;
 #nullable restore
 #else
-        public string PrivacyLevel { get; set; }
+        public string PrivacyLevel { get => _explicitNullValuePrivacyLevel; set { _explicitNullValuePrivacyLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy_level"); else _explicitNullProperties?.Remove("privacy_level"); } }
+        private string _explicitNullValuePrivacyLevel = default!;
 #endif
         /// <summary>The post title. The maximum length for photo posts is 90 in UTF-16 runes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo"/> and sets the default values.
@@ -62,7 +86,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         public static global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +119,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
             writer.WriteBoolValue("disable_comment", DisableComment);
             writer.WriteStringValue("privacy_level", PrivacyLevel);
             writer.WriteStringValue("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

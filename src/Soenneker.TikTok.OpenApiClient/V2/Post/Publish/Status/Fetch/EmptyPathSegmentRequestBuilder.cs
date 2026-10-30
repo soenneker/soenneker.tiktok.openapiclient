@@ -61,6 +61,7 @@ namespace Soenneker.TikTok.OpenApiClient.V2.Post.Publish.Status.Fetch
                 { "401", global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishStatusFetchResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishStatusFetchResponse.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishStatusFetchResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishStatusFetchResponse>(requestInfo, global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishStatusFetchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

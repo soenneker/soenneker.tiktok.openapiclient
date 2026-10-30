@@ -12,26 +12,41 @@ namespace Soenneker.TikTok.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostV2PostPublishContentInitRequestSourceInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("photo_cover_index") is { } nullNodePhotoCoverIndex && nullNodePhotoCoverIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoCoverIndex = null;
+            if (parseNode.GetChildNode("photo_images") is { } nullNodePhotoImages && nullNodePhotoImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoImages = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the index (starting from 0) of the photo to be used as the cover</summary>
-        public int? PhotoCoverIndex { get; set; }
+        public int? PhotoCoverIndex { get => _explicitNullValuePhotoCoverIndex; set { _explicitNullValuePhotoCoverIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_cover_index"); else _explicitNullProperties?.Remove("photo_cover_index"); } }
+        private int? _explicitNullValuePhotoCoverIndex = default!;
         /// <summary>An array containing up to 35 photo content URLs. The URLs must be publicly accessible and verified by your app. Learn more about pulling from URLs .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PhotoImages { get; set; }
+        public List<string>? PhotoImages { get => _explicitNullValuePhotoImages; set { _explicitNullValuePhotoImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_images"); else _explicitNullProperties?.Remove("photo_images"); } }
+        private List<string>? _explicitNullValuePhotoImages = default!;
 #nullable restore
 #else
-        public List<string> PhotoImages { get; set; }
+        public List<string> PhotoImages { get => _explicitNullValuePhotoImages; set { _explicitNullValuePhotoImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_images"); else _explicitNullProperties?.Remove("photo_images"); } }
+        private List<string> _explicitNullValuePhotoImages = default!;
 #endif
         /// <summary>Only PULL_FROM_URL is allowed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get; set; }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         public static global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
             writer.WriteIntValue("photo_cover_index", PhotoCoverIndex);
             writer.WriteCollectionOfPrimitiveValues<string>("photo_images", PhotoImages);
             writer.WriteStringValue("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

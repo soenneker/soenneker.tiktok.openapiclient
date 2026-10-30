@@ -12,24 +12,37 @@ namespace Soenneker.TikTok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2PostPublishVideoInitResponse : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeDataEscaped && nullNodeDataEscaped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataEscaped = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseData? DataEscaped { get; set; }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseData? DataEscaped { get => _explicitNullValueDataEscaped; set { _explicitNullValueDataEscaped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseData? _explicitNullValueDataEscaped = default!;
 #nullable restore
 #else
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseData DataEscaped { get; set; }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseData DataEscaped { get => _explicitNullValueDataEscaped; set { _explicitNullValueDataEscaped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseData _explicitNullValueDataEscaped = default!;
 #endif
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseError? Error { get; set; }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseError Error { get; set; }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseError _explicitNullValueError = default!;
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
@@ -48,7 +61,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         public static global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +84,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseData>("data", DataEscaped);
             writer.WriteObjectValue<global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishVideoInitResponseError>("error", Error);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

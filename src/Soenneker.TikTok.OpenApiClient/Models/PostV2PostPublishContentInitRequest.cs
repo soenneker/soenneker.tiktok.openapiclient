@@ -11,42 +11,63 @@ namespace Soenneker.TikTok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostV2PostPublishContentInitRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("is_aigc") is { } nullNodeIsAigc && nullNodeIsAigc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAigc = null;
+            if (parseNode.GetChildNode("media_type") is { } nullNodeMediaType && nullNodeMediaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaType = null;
+            if (parseNode.GetChildNode("post_info") is { } nullNodePostInfo && nullNodePostInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostInfo = null;
+            if (parseNode.GetChildNode("post_mode") is { } nullNodePostMode && nullNodePostMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostMode = null;
+            if (parseNode.GetChildNode("source_info") is { } nullNodeSourceInfo && nullNodeSourceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceInfo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to `true` if the photo is AI generated content. If set, the photo will be labeled with an AI-generated tag in the description.</summary>
-        public bool? IsAigc { get; set; }
+        public bool? IsAigc { get => _explicitNullValueIsAigc; set { _explicitNullValueIsAigc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_aigc"); else _explicitNullProperties?.Remove("is_aigc"); } }
+        private bool? _explicitNullValueIsAigc = default!;
         /// <summary>Currently only PHOTO is allowed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaType { get; set; }
+        public string? MediaType { get => _explicitNullValueMediaType; set { _explicitNullValueMediaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_type"); else _explicitNullProperties?.Remove("media_type"); } }
+        private string? _explicitNullValueMediaType = default!;
 #nullable restore
 #else
-        public string MediaType { get; set; }
+        public string MediaType { get => _explicitNullValueMediaType; set { _explicitNullValueMediaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_type"); else _explicitNullProperties?.Remove("media_type"); } }
+        private string _explicitNullValueMediaType = default!;
 #endif
         /// <summary>The post information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo? PostInfo { get; set; }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo? PostInfo { get => _explicitNullValuePostInfo; set { _explicitNullValuePostInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_info"); else _explicitNullProperties?.Remove("post_info"); } }
+        private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo? _explicitNullValuePostInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo PostInfo { get; set; }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo PostInfo { get => _explicitNullValuePostInfo; set { _explicitNullValuePostInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_info"); else _explicitNullProperties?.Remove("post_info"); } }
+        private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo _explicitNullValuePostInfo = default!;
 #endif
         /// <summary>Enum of: DIRECT POST: Directly post the content to TikTok user&apos;s account. MEDIA_UPLOAD: Upload content to TikTok for users to complete the post using TikTok&apos;s editing flow. Users will receive an inbox notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostMode { get; set; }
+        public string? PostMode { get => _explicitNullValuePostMode; set { _explicitNullValuePostMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_mode"); else _explicitNullProperties?.Remove("post_mode"); } }
+        private string? _explicitNullValuePostMode = default!;
 #nullable restore
 #else
-        public string PostMode { get; set; }
+        public string PostMode { get => _explicitNullValuePostMode; set { _explicitNullValuePostMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_mode"); else _explicitNullProperties?.Remove("post_mode"); } }
+        private string _explicitNullValuePostMode = default!;
 #endif
         /// <summary>The media source information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo? SourceInfo { get; set; }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo? SourceInfo { get => _explicitNullValueSourceInfo; set { _explicitNullValueSourceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_info"); else _explicitNullProperties?.Remove("source_info"); } }
+        private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo? _explicitNullValueSourceInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo SourceInfo { get; set; }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo SourceInfo { get => _explicitNullValueSourceInfo; set { _explicitNullValueSourceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_info"); else _explicitNullProperties?.Remove("source_info"); } }
+        private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo _explicitNullValueSourceInfo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequest"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         public static global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.TikTok.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestPostInfo>("post_info", PostInfo);
             writer.WriteStringValue("post_mode", PostMode);
             writer.WriteObjectValue<global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishContentInitRequestSourceInfo>("source_info", SourceInfo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
