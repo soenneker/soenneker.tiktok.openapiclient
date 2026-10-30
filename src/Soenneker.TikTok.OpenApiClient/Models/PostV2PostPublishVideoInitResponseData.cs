@@ -17,8 +17,10 @@ namespace Soenneker.TikTok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("publish_id") is { } nullNodePublishId && nullNodePublishId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishId = null;
-            if (parseNode.GetChildNode("upload_url") is { } nullNodeUploadUrl && nullNodeUploadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUrl = null;
+            if (parseNode.GetChildNode("publish_id") is null) { _explicitNullValuePublishId = default!; _explicitNullProperties?.Remove("publish_id"); }
+            else if (parseNode.GetChildNode("publish_id") is { } nullNodePublishId && nullNodePublishId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishId = null;
+            if (parseNode.GetChildNode("upload_url") is null) { _explicitNullValueUploadUrl = default!; _explicitNullProperties?.Remove("upload_url"); }
+            else if (parseNode.GetChildNode("upload_url") is { } nullNodeUploadUrl && nullNodeUploadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         /// <summary>An identifier to track the posting action, which you can use to check the status. The maximum length of this field is 64.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublishId { get => _explicitNullValuePublishId; set { _explicitNullValuePublishId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_id"); else _explicitNullProperties?.Remove("publish_id"); } }
+        public string? PublishId { get => _explicitNullValuePublishId; set { _explicitNullValuePublishId = value; AdditionalData?.Remove("publish_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_id"); else _explicitNullProperties?.Remove("publish_id"); } }
         private string? _explicitNullValuePublishId = default!;
 #nullable restore
 #else
-        public string PublishId { get => _explicitNullValuePublishId; set { _explicitNullValuePublishId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_id"); else _explicitNullProperties?.Remove("publish_id"); } }
+        public string PublishId { get => _explicitNullValuePublishId; set { _explicitNullValuePublishId = value; AdditionalData?.Remove("publish_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_id"); else _explicitNullProperties?.Remove("publish_id"); } }
         private string _explicitNullValuePublishId = default!;
 #endif
         /// <summary>The URL provided by TikTok where the video file can be uploaded. The maximum length of this field is 256. This field is only for source=FILE_UPLOAD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
+        public string? UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; AdditionalData?.Remove("upload_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
         private string? _explicitNullValueUploadUrl = default!;
 #nullable restore
 #else
-        public string UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
+        public string UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; AdditionalData?.Remove("upload_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
         private string _explicitNullValueUploadUrl = default!;
 #endif
         /// <summary>

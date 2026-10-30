@@ -17,50 +17,55 @@ namespace Soenneker.TikTok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("downloaded_bytes") is { } nullNodeDownloadedBytes && nullNodeDownloadedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadedBytes = null;
-            if (parseNode.GetChildNode("fail_reason") is { } nullNodeFailReason && nullNodeFailReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailReason = null;
-            if (parseNode.GetChildNode("publicaly_available_post_id") is { } nullNodePublicalyAvailablePostId && nullNodePublicalyAvailablePostId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicalyAvailablePostId = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("uploaded_bytes") is { } nullNodeUploadedBytes && nullNodeUploadedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedBytes = null;
+            if (parseNode.GetChildNode("downloaded_bytes") is null) { _explicitNullValueDownloadedBytes = default!; _explicitNullProperties?.Remove("downloaded_bytes"); }
+            else if (parseNode.GetChildNode("downloaded_bytes") is { } nullNodeDownloadedBytes && nullNodeDownloadedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadedBytes = null;
+            if (parseNode.GetChildNode("fail_reason") is null) { _explicitNullValueFailReason = default!; _explicitNullProperties?.Remove("fail_reason"); }
+            else if (parseNode.GetChildNode("fail_reason") is { } nullNodeFailReason && nullNodeFailReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailReason = null;
+            if (parseNode.GetChildNode("publicaly_available_post_id") is null) { _explicitNullValuePublicalyAvailablePostId = default!; _explicitNullProperties?.Remove("publicaly_available_post_id"); }
+            else if (parseNode.GetChildNode("publicaly_available_post_id") is { } nullNodePublicalyAvailablePostId && nullNodePublicalyAvailablePostId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicalyAvailablePostId = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("uploaded_bytes") is null) { _explicitNullValueUploadedBytes = default!; _explicitNullProperties?.Remove("uploaded_bytes"); }
+            else if (parseNode.GetChildNode("uploaded_bytes") is { } nullNodeUploadedBytes && nullNodeUploadedBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedBytes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of bytes downloaded (1-indexed) for PULL_FROM_URL</summary>
-        public long? DownloadedBytes { get => _explicitNullValueDownloadedBytes; set { _explicitNullValueDownloadedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloaded_bytes"); else _explicitNullProperties?.Remove("downloaded_bytes"); } }
+        public long? DownloadedBytes { get => _explicitNullValueDownloadedBytes; set { _explicitNullValueDownloadedBytes = value; AdditionalData?.Remove("downloaded_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloaded_bytes"); else _explicitNullProperties?.Remove("downloaded_bytes"); } }
         private long? _explicitNullValueDownloadedBytes = default!;
         /// <summary>Refer to the fail_reason table to see whether the issue is with the developer, the TikTok creator, or TikTok APIs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailReason { get => _explicitNullValueFailReason; set { _explicitNullValueFailReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fail_reason"); else _explicitNullProperties?.Remove("fail_reason"); } }
+        public string? FailReason { get => _explicitNullValueFailReason; set { _explicitNullValueFailReason = value; AdditionalData?.Remove("fail_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fail_reason"); else _explicitNullProperties?.Remove("fail_reason"); } }
         private string? _explicitNullValueFailReason = default!;
 #nullable restore
 #else
-        public string FailReason { get => _explicitNullValueFailReason; set { _explicitNullValueFailReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fail_reason"); else _explicitNullProperties?.Remove("fail_reason"); } }
+        public string FailReason { get => _explicitNullValueFailReason; set { _explicitNullValueFailReason = value; AdditionalData?.Remove("fail_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fail_reason"); else _explicitNullProperties?.Remove("fail_reason"); } }
         private string _explicitNullValueFailReason = default!;
 #endif
         /// <summary>post_id is returned only if the post is published for public viewership and has been approved by the TikTok moderation process. Creators may use the uploaded content draft to create multiple pieces of content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? PublicalyAvailablePostId { get => _explicitNullValuePublicalyAvailablePostId; set { _explicitNullValuePublicalyAvailablePostId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicaly_available_post_id"); else _explicitNullProperties?.Remove("publicaly_available_post_id"); } }
+        public List<long?>? PublicalyAvailablePostId { get => _explicitNullValuePublicalyAvailablePostId; set { _explicitNullValuePublicalyAvailablePostId = value; AdditionalData?.Remove("publicaly_available_post_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicaly_available_post_id"); else _explicitNullProperties?.Remove("publicaly_available_post_id"); } }
         private List<long?>? _explicitNullValuePublicalyAvailablePostId = default!;
 #nullable restore
 #else
-        public List<long?> PublicalyAvailablePostId { get => _explicitNullValuePublicalyAvailablePostId; set { _explicitNullValuePublicalyAvailablePostId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicaly_available_post_id"); else _explicitNullProperties?.Remove("publicaly_available_post_id"); } }
+        public List<long?> PublicalyAvailablePostId { get => _explicitNullValuePublicalyAvailablePostId; set { _explicitNullValuePublicalyAvailablePostId = value; AdditionalData?.Remove("publicaly_available_post_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicaly_available_post_id"); else _explicitNullProperties?.Remove("publicaly_available_post_id"); } }
         private List<long?> _explicitNullValuePublicalyAvailablePostId = default!;
 #endif
         /// <summary>The following are the available statuses: PROCESSING_UPLOAD : Only available for FILE_UPLOAD . Indicates that the upload is in process. PROCESSING_DOWNLOAD : Only available for PULL_FROM_URL . Indicates that the download from the URL is in process. SEND_TO_USER_INBOX : Only available when you choose to upload content . Indicates that a notification has been sent to creator&apos;s inbox to complete the draft post using TikTok&apos;s editing flow. PUBLISH_COMPLETE : For the Direct Post , it indicates that the content has been posted. For the Upload Content, it indicates that the user has clicked on the inbox notification and has successfully posted the media using TikTok editing flow. FAILED : Indicates that an error has occurred and the entire process has failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>The number of bytes uploaded (1-indexed) for FILE_UPLOAD</summary>
-        public long? UploadedBytes { get => _explicitNullValueUploadedBytes; set { _explicitNullValueUploadedBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded_bytes"); else _explicitNullProperties?.Remove("uploaded_bytes"); } }
+        public long? UploadedBytes { get => _explicitNullValueUploadedBytes; set { _explicitNullValueUploadedBytes = value; AdditionalData?.Remove("uploaded_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded_bytes"); else _explicitNullProperties?.Remove("uploaded_bytes"); } }
         private long? _explicitNullValueUploadedBytes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishStatusFetchResponseData"/> and sets the default values.

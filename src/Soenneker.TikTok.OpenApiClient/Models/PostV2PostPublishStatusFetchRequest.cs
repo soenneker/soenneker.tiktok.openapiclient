@@ -17,7 +17,8 @@ namespace Soenneker.TikTok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("publish_id") is { } nullNodePublishId && nullNodePublishId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishId = null;
+            if (parseNode.GetChildNode("publish_id") is null) { _explicitNullValuePublishId = default!; _explicitNullProperties?.Remove("publish_id"); }
+            else if (parseNode.GetChildNode("publish_id") is { } nullNodePublishId && nullNodePublishId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         /// <summary>The publish_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublishId { get => _explicitNullValuePublishId; set { _explicitNullValuePublishId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_id"); else _explicitNullProperties?.Remove("publish_id"); } }
+        public string? PublishId { get => _explicitNullValuePublishId; set { _explicitNullValuePublishId = value; AdditionalData?.Remove("publish_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_id"); else _explicitNullProperties?.Remove("publish_id"); } }
         private string? _explicitNullValuePublishId = default!;
 #nullable restore
 #else
-        public string PublishId { get => _explicitNullValuePublishId; set { _explicitNullValuePublishId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_id"); else _explicitNullProperties?.Remove("publish_id"); } }
+        public string PublishId { get => _explicitNullValuePublishId; set { _explicitNullValuePublishId = value; AdditionalData?.Remove("publish_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_id"); else _explicitNullProperties?.Remove("publish_id"); } }
         private string _explicitNullValuePublishId = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.TikTok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source_info") is { } nullNodeSourceInfo && nullNodeSourceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceInfo = null;
+            if (parseNode.GetChildNode("source_info") is null) { _explicitNullValueSourceInfo = default!; _explicitNullProperties?.Remove("source_info"); }
+            else if (parseNode.GetChildNode("source_info") is { } nullNodeSourceInfo && nullNodeSourceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceInfo = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.TikTok.OpenApiClient.Models
         /// <summary>The source_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishInboxVideoInitRequestSourceInfo? SourceInfo { get => _explicitNullValueSourceInfo; set { _explicitNullValueSourceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_info"); else _explicitNullProperties?.Remove("source_info"); } }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishInboxVideoInitRequestSourceInfo? SourceInfo { get => _explicitNullValueSourceInfo; set { _explicitNullValueSourceInfo = value; AdditionalData?.Remove("source_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_info"); else _explicitNullProperties?.Remove("source_info"); } }
         private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishInboxVideoInitRequestSourceInfo? _explicitNullValueSourceInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishInboxVideoInitRequestSourceInfo SourceInfo { get => _explicitNullValueSourceInfo; set { _explicitNullValueSourceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_info"); else _explicitNullProperties?.Remove("source_info"); } }
+        public global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishInboxVideoInitRequestSourceInfo SourceInfo { get => _explicitNullValueSourceInfo; set { _explicitNullValueSourceInfo = value; AdditionalData?.Remove("source_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_info"); else _explicitNullProperties?.Remove("source_info"); } }
         private global::Soenneker.TikTok.OpenApiClient.Models.PostV2PostPublishInboxVideoInitRequestSourceInfo _explicitNullValueSourceInfo = default!;
 #endif
         /// <summary>

@@ -18,34 +18,37 @@ namespace Soenneker.TikTok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("photo_cover_index") is { } nullNodePhotoCoverIndex && nullNodePhotoCoverIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoCoverIndex = null;
-            if (parseNode.GetChildNode("photo_images") is { } nullNodePhotoImages && nullNodePhotoImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoImages = null;
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("photo_cover_index") is null) { _explicitNullValuePhotoCoverIndex = default!; _explicitNullProperties?.Remove("photo_cover_index"); }
+            else if (parseNode.GetChildNode("photo_cover_index") is { } nullNodePhotoCoverIndex && nullNodePhotoCoverIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoCoverIndex = null;
+            if (parseNode.GetChildNode("photo_images") is null) { _explicitNullValuePhotoImages = default!; _explicitNullProperties?.Remove("photo_images"); }
+            else if (parseNode.GetChildNode("photo_images") is { } nullNodePhotoImages && nullNodePhotoImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoImages = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the index (starting from 0) of the photo to be used as the cover</summary>
-        public int? PhotoCoverIndex { get => _explicitNullValuePhotoCoverIndex; set { _explicitNullValuePhotoCoverIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_cover_index"); else _explicitNullProperties?.Remove("photo_cover_index"); } }
+        public int? PhotoCoverIndex { get => _explicitNullValuePhotoCoverIndex; set { _explicitNullValuePhotoCoverIndex = value; AdditionalData?.Remove("photo_cover_index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_cover_index"); else _explicitNullProperties?.Remove("photo_cover_index"); } }
         private int? _explicitNullValuePhotoCoverIndex = default!;
         /// <summary>An array containing up to 35 photo content URLs. The URLs must be publicly accessible and verified by your app. Learn more about pulling from URLs .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PhotoImages { get => _explicitNullValuePhotoImages; set { _explicitNullValuePhotoImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_images"); else _explicitNullProperties?.Remove("photo_images"); } }
+        public List<string>? PhotoImages { get => _explicitNullValuePhotoImages; set { _explicitNullValuePhotoImages = value; AdditionalData?.Remove("photo_images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_images"); else _explicitNullProperties?.Remove("photo_images"); } }
         private List<string>? _explicitNullValuePhotoImages = default!;
 #nullable restore
 #else
-        public List<string> PhotoImages { get => _explicitNullValuePhotoImages; set { _explicitNullValuePhotoImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_images"); else _explicitNullProperties?.Remove("photo_images"); } }
+        public List<string> PhotoImages { get => _explicitNullValuePhotoImages; set { _explicitNullValuePhotoImages = value; AdditionalData?.Remove("photo_images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_images"); else _explicitNullProperties?.Remove("photo_images"); } }
         private List<string> _explicitNullValuePhotoImages = default!;
 #endif
         /// <summary>Only PULL_FROM_URL is allowed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private string _explicitNullValueSource = default!;
 #endif
         /// <summary>
