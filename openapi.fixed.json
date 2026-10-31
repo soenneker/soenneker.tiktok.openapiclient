@@ -930,11 +930,11 @@
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-query-creator-info",
-      "sha256": "c6964a8ff4b7f605122d6463b6960d0e2594fc23c464f917909bc5ca316f41b8"
+      "sha256": "01136695351f6b623ac9ff523b11a8579e042d0049104623fa1018e7b867bcd5"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-upload-video",
-      "sha256": "52e08918b90f7be1fb95e3f8c6b3664fcdb8bb4b260f4610a273037128f7992f"
+      "sha256": "0203f0f0d9c446828728eb6deca1a549b7b5fd075d0ef1eefd22742277355a92"
     }
   ]
 }
