@@ -869,23 +869,23 @@
   "x-documentation-sources": [
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-direct-post",
-      "sha256": "1683f42c37a1d94aba0093a88bfdc10d28ef9057f5c1ce408a6f8804ae9f1951"
+      "sha256": "e7ccba683797c24712267473dfebfb791af241984596dfbcfb1dde3c0307e487"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-get-video-status",
-      "sha256": "1f6f8998a51ab8fa4fe76adab3d9f6728e0faba6081d6535508598638798576a"
+      "sha256": "7992a583a03c945973777b9cd9f78ca31e055ef740a5b1a2f5d42e04d93cb9ac"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-photo-post",
-      "sha256": "6c5129727217172c56b5bf06cdbcb784ea376e7b3051aa4546f854e658cb2f38"
+      "sha256": "441e3a3a5eb3ba5eb44206805f37616bc772fbdbea314d9dcf5052acdd476725"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-query-creator-info",
-      "sha256": "c6964a8ff4b7f605122d6463b6960d0e2594fc23c464f917909bc5ca316f41b8"
+      "sha256": "0bd2736866ff2a14e17b0abb96cd03ad879bf3b36667dcf672b984c4032e5328"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-upload-video",
-      "sha256": "52e08918b90f7be1fb95e3f8c6b3664fcdb8bb4b260f4610a273037128f7992f"
+      "sha256": "1f82bd58dd36bf022959989c32199afd83dc9e931d1afd96f6be7b9a05dfff63"
     }
   ]
 }
