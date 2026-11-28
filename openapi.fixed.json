@@ -914,7 +914,7 @@
   "x-documentation-sources": [
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-direct-post",
-      "sha256": "b679ba33a1b64cb4838a2c3bca5ff760eeb21a257b27e617f0a5135ba8d509e4"
+      "sha256": "e7ccba683797c24712267473dfebfb791af241984596dfbcfb1dde3c0307e487"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-get-video-status",
@@ -922,7 +922,7 @@
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-photo-post",
-      "sha256": "4a781df8872bdfdc60a7565e7df24bd19524fc5cfa70c88dbe06916050b927c6"
+      "sha256": "3242ad31ee7843dc200f8c97eff33b44e492153f0b398d32becaa7b417845c52"
     },
     {
       "url": "https://developers.tiktok.com/docs/en/content-posting-api-reference-query-creator-info",
